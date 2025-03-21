@@ -9,6 +9,8 @@ public class Main {
         //                can assign key strokes to individual Swing components
         //                more difficult to utilize and set up :(
         
+        //instance
+        Game game = new Game();
     }
     
 }
