@@ -24,44 +24,58 @@ public class Game {
         label.setBackground(Color.red);
         label.setBounds(100, 100, 100, 100);
         label.setOpaque(true);
+        
+        upAction = new UpAction();
+        downAction = new DownAction();
+        leftAction = new LeftAction();
+        rightAction = new RightAction();
 
+        label.getInputMap().put(KeyStroke.getKeyStroke('w'), "upAction");
+        label.getActionMap().put("upAction", upAction);
+        label.getInputMap().put(KeyStroke.getKeyStroke('s'), "downAction");
+        label.getActionMap().put("downAction", downAction);
+        label.getInputMap().put(KeyStroke.getKeyStroke('a'), "leftAction");
+        label.getActionMap().put("leftAction", leftAction);
+        label.getInputMap().put(KeyStroke.getKeyStroke('d'), "rightAction");
+        label.getActionMap().put("rightAction", rightAction);
+        
         frame.add(label);
         frame.setVisible(true);
         
     }
     
-    public class upAction extends AbstractAction {
+    public class UpAction extends AbstractAction {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            label.setLocation(label.getX(), label.getY() - 10);
         }
         
     }
     
-    public class downAction extends AbstractAction {
+    public class DownAction extends AbstractAction {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            label.setLocation(label.getX(), label.getY() + 10);
         }
         
     }
     
-    public class leftAction extends AbstractAction {
+    public class LeftAction extends AbstractAction {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            label.setLocation(label.getX() - 10, label.getY());            
         }
         
     }
     
-    public class rightAction extends AbstractAction {
+    public class RightAction extends AbstractAction {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            label.setLocation(label.getX() + 10, label.getY());  
         }
         
     }
