@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -13,6 +14,19 @@ public class Game {
     
     //construct
     Game() {
+        
+        frame = new JFrame("KeyBinding Demo");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(420, 420);
+        frame.setLayout(null);
+        
+        label = new JLabel();
+        label.setBackground(Color.red);
+        label.setBounds(100, 100, 100, 100);
+        label.setOpaque(true);
+
+        frame.add(label);
+        frame.setVisible(true);
         
     }
     
